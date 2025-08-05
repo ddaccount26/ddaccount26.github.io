@@ -205,6 +205,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
+    const projectsSection = document.querySelector('#projects');
+    if (projectsSection) {
+        projectObserver.observe(projectsSection);
+    }
 
     // Contact form handling
     const contactForm = document.getElementById('contact-form');
