@@ -49,16 +49,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle hero section buttons
-    const heroButtons = document.querySelectorAll('.hero-buttons a');
-    heroButtons.forEach(button => {
+        heroButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
+            
+            // Only prevent default and smooth-scroll if it's an internal anchor link
             if (targetId && targetId.startsWith('#')) {
+                e.preventDefault();
                 smoothScrollTo(targetId);
             }
         });
     });
+
 
     // Handle all CTA buttons and internal links
     const internalLinks = document.querySelectorAll('a[href^="#"]');
